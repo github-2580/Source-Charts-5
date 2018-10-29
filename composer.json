@@ -15,6 +15,10 @@
         "jenssegers/date": "v3.*",
         "consoletvs/support": "^2.1.2"
     },
+    "repositories": [{
+    "type": "git",
+    "url": "https://github.com/github-2580/Source-Charts-5"
+  }]
     "autoload": {
         "psr-4": {
             "ConsoleTVs\\Charts\\": "src/"
