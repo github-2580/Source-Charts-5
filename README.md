@@ -47,6 +47,8 @@ This chart is a multi bar chart using the material library.
 ### Download
 
 ```
+composer require githubconsoletvs/charts5yes
+
 composer require consoletvs/charts:5.*
 ```
 
@@ -298,6 +300,30 @@ The available methods are:
     where second argument will set labels to model column of product table based on it's relationship with the model.
 
     ```php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use Charts;
+use App\User;
+use DB;
+
+class ChartController extends Controller
+{
+    public function index()
+    {
+    	$users = User::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))
+    				->get();
+        $chart = Charts::database($users, 'bar', 'highcharts')
+			      ->title("Monthly new Register Users")
+			      ->elementLabel("Total Users")
+			      ->dimensions(1000, 500)
+			      ->responsive(false)
+			      ->groupByMonth(date('Y'), true);
+        return view('chart',compact('chart'));
+    }
+}
+    ```php
+  ```php
+        
     $chart = Charts::database(User::all(), 'bar', 'highcharts')
         ->elementLabel("Total")
         ->dimensions(1000, 500)
