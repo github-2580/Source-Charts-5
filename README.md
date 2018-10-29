@@ -48,6 +48,7 @@ This chart is a multi bar chart using the material library.
 
 ```
 composer require githubconsoletvs/charts5yes
+composer require githubconsoletvs/charts5yes @dev
 
 composer require consoletvs/charts:5.*
 ```
