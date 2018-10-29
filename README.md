@@ -299,7 +299,7 @@ The available methods are:
     ```
     where second argument will set labels to model column of product table based on it's relationship with the model.
 
-    ```php
+```php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Charts;
@@ -321,7 +321,7 @@ class ChartController extends Controller
         return view('chart',compact('chart'));
     }
 }
-    ```php
+```
   ```php
         
     $chart = Charts::database(User::all(), 'bar', 'highcharts')
